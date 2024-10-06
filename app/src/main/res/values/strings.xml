@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ProgriFit3.0</string>
+    <!--
+        Main Screen / Starting Screen
+    -->
+    <string name="main_screen_text">Let us be a part of your journey for a better you.</string>
+    <string name="main_screen_button_text">Continue</string>
+
+    <!--
+        Information Screen
+    -->
+    <string name="information_text">Information</string>
+    <string name="information_label_name">Name</string>
+    <string name="information_label_age">Age</string>
+    <string name="information_label_weight">Weight</string>
+    <string name="information_goals_text">Goals</string>
+    <string name="information_label_weight_goal">Weight Goal</string>
+    <string name="information_label_duration">Duration in Days</string>
+    <string name="information_button_text">Next</string>
+
+    <!--
+        Home Screen
+    -->
+    <string name="homescreen_shop_button_text">Shop</string>
+    <string name="homescreen_cardio_button_text">Cardio</string>
+    <string name="homescreen_muscle_gain_button_text">Muscle Gain</string>
+    <string name="homescreen_core_training_button_text">Core Training</string>
+    <string name="homescreen_greetings">Greetings,</string>
+
+    <!--
+        Set Cardio Screen
+    -->
+    <string name="setcardio_text">Cardio Routes</string>
+    <string name="setcardio_add_button">Add</string>
+
+    <!--
+        Set Cardio Screen [ FRAGMENT ADD ]
+    -->
+    <string name="setcardio_fragment_">Set Jogging Routes</string>
+    <string name="setcardio_fragment_edit_route_button">Edit Route</string>
+    <string name="setcardio_fragment_confirm_button">Confirm</string>
+    <string name="setcardio_fragment_delete_button">Delete</string>
+
+
+    <!--
+        Set Cardio Screen [ FRAGMENT UPDATE ]
+    -->
+    <string name="setcardio_fragment_update_text">Jogging Routes Details</string>
+    <string name="setcardio_fragment_update_start_button">Start Route</string>
+    <string name="setcardio_fragment_update_button">Update Route</string>
+
+</resources>

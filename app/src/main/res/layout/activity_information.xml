@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="79dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="316dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/progrifit_logo" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="400dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="104dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="256dp"
+        android:layout_height="53dp"
+        android:gravity="start"
+        android:text="@string/information_text"
+        android:textColor="#000000"
+        android:textFontWeight="400"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- NAME INPUT -->
+            <TextView
+                android:id="@+id/name_input_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="start"
+                android:labelFor="@+id/name_input"
+                android:shadowColor="#D6D6D6"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="4"
+                android:text="@string/information_label_name"
+                android:textColor="#000000"
+                android:textFontWeight="400"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/editText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="Name"
+                android:background="@drawable/custom_input"
+                android:inputType="text"
+                android:layout_marginBottom="20dp"/>
+            <!-- AGE INPUT -->
+            <TextView
+                android:id="@+id/age_input_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="start"
+                android:labelFor="@+id/age_input"
+                android:shadowColor="#D6D6D6"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="4"
+                android:text="@string/information_label_age"
+                android:textColor="#000000"
+                android:textFontWeight="400"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/editText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/age_input"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="Name"
+                android:background="@drawable/custom_input"
+                android:inputType="text"
+                android:layout_marginBottom="20dp"/>
+            <!-- WEIGHT INPUT -->
+            <TextView
+                android:id="@+id/weight_input_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:gravity="start"
+                android:labelFor="@+id/weight_input"
+                android:shadowColor="#D6D6D6"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="4"
+                android:text="@string/information_label_weight"
+                android:textColor="#000000"
+                android:textFontWeight="400"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/editText"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/weight_input"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="Name"
+                android:background="@drawable/custom_input"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/Goals_text"
+                android:layout_width="256dp"
+                android:layout_height="53dp"
+                android:gravity="start"
+                android:text="@string/information_goals_text"
+                android:textColor="#000000"
+                android:textFontWeight="400"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.131" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- GOAL WEIGHT INPUT -->
+                    <TextView
+                        android:id="@+id/goal_weight_input_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:gravity="start"
+                        android:labelFor="@+id/goal_weight_input"
+                        android:shadowColor="#D6D6D6"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="4"
+                        android:text="@string/information_label_weight_goal"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@+id/editText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginBottom="10dp"/>
+
+                    <EditText
+                        android:id="@+id/goal_weight_input"
+                        android:layout_width="185dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:autofillHints="Name"
+                        android:background="@drawable/custom_input"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="173dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- GOAL WEIGHT INPUT -->
+                    <TextView
+                        android:id="@+id/duration_input_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="start"
+                        android:labelFor="@+id/duration_input"
+                        android:shadowColor="#D6D6D6"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+                        android:shadowRadius="4"
+                        android:text="@string/information_label_duration"
+                        android:textColor="#000000"
+                        android:textFontWeight="400"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@+id/editText"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <EditText
+                        android:id="@+id/duration_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="20dp"
+                        android:autofillHints="Name"
+                        android:background="@drawable/custom_input"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/information_button_next"
+        android:layout_width="324dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="136dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/information_button_text"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
