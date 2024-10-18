@@ -24,20 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/homepage_shop_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:background="@drawable/button_selector"
-        android:gravity="center"
-        android:text="@string/homescreen_shop_button_text"
-        android:textColor="#FFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/username_label"
         android:layout_width="wrap_content"
@@ -68,11 +54,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/homepage_muscle_gain_button"
+        android:id="@+id/homepage_home_workout_button"
         android:layout_width="324dp"
         android:layout_height="53dp"
         android:background="@drawable/button_selector"
-        android:text="@string/homescreen_muscle_gain_button_text"
+        android:text="@string/homescreen_home_workout_text"
         android:textColor="#FFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,11 +82,11 @@
         app:layout_constraintVertical_bias="0.442" />
 
     <Button
-        android:id="@+id/homepage_core_training_button"
+        android:id="@+id/homepage_extensive_workout_button"
         android:layout_width="324dp"
         android:layout_height="53dp"
         android:background="@drawable/button_selector"
-        android:text="@string/homescreen_core_training_button_text"
+        android:text="@string/homescreen_extensive_workout_button_text"
         android:textColor="#FFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

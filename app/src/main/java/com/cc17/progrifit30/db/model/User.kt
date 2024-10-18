@@ -10,6 +10,6 @@ data class User (
     val name: String,
     val age: Int,
     val weight: Double,
-    val weightGoal: Double,
+    val tdee: Double,
     val duration: Int
 )

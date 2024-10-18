@@ -32,6 +32,18 @@ class HomePage: AppCompatActivity() {
             val intent = Intent(this@HomePage, SetCardioTraining::class.java)
             startActivity(intent)
         }
+
+        val homeworkoutButton = findViewById<Button>(R.id.homepage_home_workout_button)
+        homeworkoutButton.setOnClickListener {
+            val intent = Intent(this@HomePage, HomeWorkout::class.java)
+            startActivity(intent)
+        }
+
+        val extensiveWorkoutButton = findViewById<Button>(R.id.homepage_extensive_workout_button)
+        extensiveWorkoutButton.setOnClickListener {
+            val intent = Intent(this@HomePage, ExtensiveWorkout::class.java)
+            startActivity(intent)
+        }
     }
 
 
