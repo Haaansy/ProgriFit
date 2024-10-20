@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.list.ListFragment"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@color/BackgroundColor">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -17,7 +18,7 @@
         android:clickable="true"
         android:contentDescription="@string/setcardio_add_button"
         android:focusable="true"
-        app:backgroundTint="@color/Blue"
+        app:backgroundTint="@color/Secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_add_24" />

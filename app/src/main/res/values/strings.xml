@@ -12,12 +12,13 @@
     <string name="information_text">Information</string>
     <string name="information_label_name">Name</string>
     <string name="information_label_age">Age</string>
-    <string name="information_label_weight">Weight</string>
-    <string name="information_label_height">Height</string>
+    <string name="information_label_weight">Weight(kg)</string>
+    <string name="information_label_height">Height(cm)</string>
     <string name="information_label_gender">Gender</string>
     <string name="information_label_activity_level">Activity Level</string>
     <string name="information_label_duration">Duration in Days</string>
     <string name="information_button_text">Next</string>
+    <string name="information_hint_dropdown">Activity Level</string>
 
     <!--
         Home Screen

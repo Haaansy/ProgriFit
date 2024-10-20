@@ -108,6 +108,9 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    //Material Design
+    implementation("androidx.compose.material3:material3:1.3.0")
+
 }
 
 secrets {

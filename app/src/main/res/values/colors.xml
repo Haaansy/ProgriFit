@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="Blue">#1E88E5</color>
+    <color name="White">#FFFFFF</color>
+    <color name="BackgroundColor">#222831</color>
+    <color name="Primary">#1B4242</color>
+    <color name="Secondary">#5C8374</color>
+    <color name="Fonts">#9EC8B9</color>
+    <color name="SecondaryBackground">#31363F</color>
+    <color name="Error">#CE5F61</color>
 </resources>

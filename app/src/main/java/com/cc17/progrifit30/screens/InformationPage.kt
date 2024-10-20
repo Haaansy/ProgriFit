@@ -6,6 +6,10 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -21,10 +25,38 @@ class InformationPage : AppCompatActivity() {
     private lateinit var mUserViewModel: UserViewModel
     private lateinit var sharedPref: SharedPreferences
 
+    companion object {
+        private var activityLevel = ""
+
+        fun modify(value: String){
+            activityLevel = value
+        }
+
+        fun getVal(): String {
+            return this.activityLevel
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_information)
+
+        // Drop Down Items for Activity Level
+        val items = listOf("sedentary","light","moderate","active","very active" )
+
+        val autocomplete : AutoCompleteTextView = findViewById(R.id.autocomplete)
+
+        val adapter = ArrayAdapter(this, R.layout.list_item, items)
+
+        autocomplete.setAdapter(adapter)
+
+        autocomplete.onItemClickListener = AdapterView.OnItemClickListener {
+                AdapterView, view, position, id ->
+            val itemSelected = AdapterView.getItemAtPosition(position)
+            val companion = Companion
+            companion.modify(itemSelected.toString())
+        }
 
         // User View Model
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -51,16 +83,17 @@ class InformationPage : AppCompatActivity() {
         val age = findViewById<EditText>(R.id.age_input).text
         val weight = findViewById<EditText>(R.id.weight_input).text
         val height = findViewById<EditText>(R.id.height_input).text // New height input
-        val gender = findViewById<EditText>(R.id.gender_input).text.toString() // New gender input
-        val activityLevel = findViewById<EditText>(R.id.activity_level_input).text.toString() // New activity level input
-        val duration = findViewById<EditText>(R.id.duration_input).text
 
-        if (inputCheck(name, age, weight, height, gender, activityLevel, duration)) {
+        // Companion Object
+        val companion = Companion
+        val activityLevel = companion.getVal()
+
+        if (inputCheck(name, age, weight, height, activityLevel, gender = "male")) {
             // Calculate TDEE
-            val tdee = calculateTDEE(weight.toString().toDouble(), height.toString().toDouble(), age.toString().toInt(), gender, activityLevel)
+            val tdee = calculateTDEE(weight.toString().toDouble(), height.toString().toDouble(), age.toString().toInt(), gender = "male", activityLevel)
 
             // Create User Object
-            val user = User(0, name, age.toString().toInt(), weight.toString().toDouble(), tdee, duration.toString().toInt())
+            val user = User(0, name, age.toString().toInt(), weight.toString().toDouble(), height.toString().toInt(), tdee, gender = "male", activityLevel)
 
             // Add Data to Database
             mUserViewModel.insertUser(user)
@@ -79,8 +112,8 @@ class InformationPage : AppCompatActivity() {
     }
 
     // Check Input Function [ CHECK EMPTY FIELDS ]
-    private fun inputCheck(name: String, age: Editable, weight: Editable, height: Editable, gender: String, activityLevel: String, duration: Editable): Boolean {
-        return !(TextUtils.isEmpty(name) || age.isEmpty() || weight.isEmpty() || height.isEmpty() || gender.isEmpty() || activityLevel.isEmpty() || duration.isEmpty())
+    private fun inputCheck(name: String, age: Editable, weight: Editable, height: Editable, activityLevel: String, gender: String): Boolean {
+        return !(TextUtils.isEmpty(name) || age.isEmpty() || weight.isEmpty() || height.isEmpty() ||  activityLevel.isEmpty() || gender.isEmpty() )
     }
 
     // Calculate TDEE
