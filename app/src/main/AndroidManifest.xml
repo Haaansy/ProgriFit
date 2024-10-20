@@ -12,7 +12,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/progrifit_logo"
         android:supportsRtl="false"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        android:theme="@style/Theme.ProgriFit30"
         android:label="ProgriFit">
 
         <!--

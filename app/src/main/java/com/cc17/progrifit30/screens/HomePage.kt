@@ -23,7 +23,7 @@ class HomePage: AppCompatActivity() {
         val nameLabel = findViewById<TextView>(R.id.username)
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         mUserViewModel.readAllData.observe(this, Observer{user ->
-            nameLabel.text = user.name
+            "Hello, ${user.name}!".also { nameLabel.text = it }
         })
 
 
@@ -33,18 +33,16 @@ class HomePage: AppCompatActivity() {
             startActivity(intent)
         }
 
-        val homeworkoutButton = findViewById<Button>(R.id.homepage_home_workout_button)
-        homeworkoutButton.setOnClickListener {
+        val resistanceButton = findViewById<Button>(R.id.homepage_resistance_button)
+        resistanceButton.setOnClickListener {
             val intent = Intent(this@HomePage, HomeWorkout::class.java)
             startActivity(intent)
         }
 
-        val extensiveWorkoutButton = findViewById<Button>(R.id.homepage_extensive_workout_button)
+        val extensiveWorkoutButton = findViewById<Button>(R.id.homepage_extensive_button)
         extensiveWorkoutButton.setOnClickListener {
             val intent = Intent(this@HomePage, ExtensiveWorkout::class.java)
             startActivity(intent)
         }
     }
-
-
 }

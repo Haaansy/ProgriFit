@@ -3,6 +3,7 @@ package com.cc17.progrifit30.screens
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -15,10 +16,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
 import com.cc17.progrifit30.R
 import com.cc17.progrifit30.db.model.User
 import com.cc17.progrifit30.db.userDB.UserViewModel
+import com.google.android.material.textfield.TextInputLayout
+import org.w3c.dom.Text
 
 class InformationPage : AppCompatActivity() {
 
@@ -27,13 +31,22 @@ class InformationPage : AppCompatActivity() {
 
     companion object {
         private var activityLevel = ""
+        private var gender = ""
 
-        fun modify(value: String){
+        fun modifyActivity(value: String){
             activityLevel = value
         }
 
-        fun getVal(): String {
+        fun getActivity(): String {
             return this.activityLevel
+        }
+
+        fun modifyGender(value: String){
+            gender = value
+        }
+
+        fun getGender(): String {
+            return this.gender
         }
     }
 
@@ -43,19 +56,35 @@ class InformationPage : AppCompatActivity() {
         setContentView(R.layout.activity_information)
 
         // Drop Down Items for Activity Level
-        val items = listOf("sedentary","light","moderate","active","very active" )
+        val activityItems = listOf("Sedentary","Light","Moderate","Active","Very Active" )
 
-        val autocomplete : AutoCompleteTextView = findViewById(R.id.autocomplete)
+        val activityAutocomplete : AutoCompleteTextView = findViewById(R.id.autocomplete_activity_level)
 
-        val adapter = ArrayAdapter(this, R.layout.list_item, items)
+        val activityAdapter = ArrayAdapter(this, R.layout.list_item, activityItems)
 
-        autocomplete.setAdapter(adapter)
+        activityAutocomplete.setAdapter(activityAdapter)
 
-        autocomplete.onItemClickListener = AdapterView.OnItemClickListener {
+        activityAutocomplete.onItemClickListener = AdapterView.OnItemClickListener {
                 AdapterView, view, position, id ->
             val itemSelected = AdapterView.getItemAtPosition(position)
             val companion = Companion
-            companion.modify(itemSelected.toString())
+            companion.modifyActivity(itemSelected.toString())
+        }
+
+        // Drop Down Items for Gender
+        val genderItems = listOf("Male","Female")
+
+        val genderAutocomplete : AutoCompleteTextView = findViewById(R.id.autocomplete_gender)
+
+        val genderAdapter = ArrayAdapter(this, R.layout.list_item, genderItems)
+
+        genderAutocomplete.setAdapter(genderAdapter)
+
+        genderAutocomplete.onItemClickListener = AdapterView.OnItemClickListener {
+                AdapterView, view, position, id ->
+            val itemSelected = AdapterView.getItemAtPosition(position)
+            val companion = Companion
+            companion.modifyGender(itemSelected.toString())
         }
 
         // User View Model
@@ -64,6 +93,7 @@ class InformationPage : AppCompatActivity() {
         // SharedPreferences
         sharedPref = getSharedPreferences("user_name", Context.MODE_PRIVATE)
 
+        // Check if User is saved to local database
         if (wasUserSaved()) {
             val intent = Intent(this@InformationPage, HomePage::class.java)
             startActivity(intent)
@@ -79,21 +109,22 @@ class InformationPage : AppCompatActivity() {
 
     // Function to get Values from EditText and Call Check for input before adding to database
     private fun addToDataBase() {
-        val name = findViewById<EditText>(R.id.name_input).text.toString()
-        val age = findViewById<EditText>(R.id.age_input).text
-        val weight = findViewById<EditText>(R.id.weight_input).text
-        val height = findViewById<EditText>(R.id.height_input).text // New height input
+        val name = findViewById<TextInputLayout>(R.id.name_input).editText?.text.toString()
+        val age = findViewById<TextInputLayout>(R.id.age_input).editText?.text.toString()
+        val weight = findViewById<TextInputLayout>(R.id.weight_input).editText?.text.toString()
+        val height = findViewById<TextInputLayout>(R.id.height_input).editText?.text.toString()
 
         // Companion Object
         val companion = Companion
-        val activityLevel = companion.getVal()
+        val activityLevel = companion.getActivity()
+        val gender = companion.getGender()
 
-        if (inputCheck(name, age, weight, height, activityLevel, gender = "male")) {
+        if (inputCheck(name, age, weight, height, activityLevel, gender)) {
             // Calculate TDEE
-            val tdee = calculateTDEE(weight.toString().toDouble(), height.toString().toDouble(), age.toString().toInt(), gender = "male", activityLevel)
+            val tdee = calculateTDEE(weight.toDouble(), height.toDouble(), age.toInt(), gender, activityLevel)
 
             // Create User Object
-            val user = User(0, name, age.toString().toInt(), weight.toString().toDouble(), height.toString().toInt(), tdee, gender = "male", activityLevel)
+            val user = User(0, name, age.toInt(), weight.toDouble(), height.toInt(), tdee, gender, activityLevel)
 
             // Add Data to Database
             mUserViewModel.insertUser(user)
@@ -112,8 +143,8 @@ class InformationPage : AppCompatActivity() {
     }
 
     // Check Input Function [ CHECK EMPTY FIELDS ]
-    private fun inputCheck(name: String, age: Editable, weight: Editable, height: Editable, activityLevel: String, gender: String): Boolean {
-        return !(TextUtils.isEmpty(name) || age.isEmpty() || weight.isEmpty() || height.isEmpty() ||  activityLevel.isEmpty() || gender.isEmpty() )
+    private fun inputCheck(name: String, age: String, weight: String, height: String, activityLevel: String, gender: String): Boolean {
+        return !(TextUtils.isEmpty(name) || TextUtils.isEmpty(age) || TextUtils.isEmpty(weight) || TextUtils.isEmpty(height) ||  activityLevel.isEmpty() || gender.isEmpty() )
     }
 
     // Calculate TDEE

@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+    android:theme="@style/Theme.Material3.Dark.NoActionBar">
+
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,140 +20,103 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.183">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <!-- NAME INPUT -->
-            <TextView
-                android:id="@+id/name_input_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="start"
-                android:labelFor="@+id/name_input"
-                android:shadowColor="#D6D6D6"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowRadius="4"
-                android:text="@string/information_label_name"
-                android:textColor="#000000"
-                android:textFontWeight="400"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                app:layout_constraintStart_toStartOf="parent" />
 
-            <!-- AGE INPUT -->
-            <EditText
+            <!-- NAME INPUT -->
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/name_input"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints="Name"
-                android:background="@drawable/custom_input"
-                android:inputType="text" />
-
-            <TextView
-                android:id="@+id/age_input_label"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="start"
-                android:labelFor="@+id/age_input"
-                android:shadowColor="#D6D6D6"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowRadius="4"
-                android:text="@string/information_label_age"
-                android:textColor="#000000"
-                android:textFontWeight="400"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_margin="10dp"
+                android:hint="@string/information_label_name">
 
-            <EditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- AGE INPUT -->
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/age_input"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints="Name"
-                android:background="@drawable/custom_input"
-                android:inputType="text" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/information_label_age">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <!-- GENDER INPUT -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autocomplete_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto"
+                    android:foregroundTint="@color/Fonts"
+                    android:hint="@string/information_label_gender"
+                    android:inputType="none"
+                    android:popupBackground="@color/Primary" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- HEIGHT INPUT -->
-            <TextView
-                android:id="@+id/height_input_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="start"
-                android:labelFor="@+id/height_input"
-                android:shadowColor="#D6D6D6"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowRadius="4"
-                android:text="@string/information_label_height"
-                android:textColor="#000000"
-                android:textFontWeight="400"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/height_input"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints="Name"
-                android:background="@drawable/custom_input"
-                android:inputType="number" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/information_label_height">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- WEIGHT INPUT -->
-            <TextView
-                android:id="@+id/weight_input_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="start"
-                android:labelFor="@+id/weight_input"
-                android:shadowColor="#D6D6D6"
-                android:shadowDx="5"
-                android:shadowDy="5"
-                android:shadowRadius="4"
-                android:text="@string/information_label_weight"
-                android:textColor="#000000"
-                android:textFontWeight="400"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toTopOf="@+id/editText"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/weight_input"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:autofillHints="Name"
-                android:background="@drawable/custom_input"
-                android:inputType="number" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/information_label_weight">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- ACTIVITY LEVEL INPUT -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+                android:layout_margin="10dp">
+
                 <AutoCompleteTextView
-                    android:id="@+id/autocomplete"
+                    android:id="@+id/autocomplete_activity_level"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto"
+                    android:foregroundTint="@color/Fonts"
                     android:hint="@string/information_hint_dropdown"
-                    android:inputType="none"/>
+                    android:inputType="none"
+                    android:popupBackground="@color/Primary" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -162,22 +127,22 @@
         android:layout_width="79dp"
         android:layout_height="75dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="316dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/progrifit_logo" />
-
 
     <View
         android:id="@+id/view"
         android:layout_width="300dp"
         android:layout_height="1dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="28dp"
         android:background="@color/Secondary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -191,21 +156,24 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintVertical_bias="0.134" />
 
     <Button
         android:id="@+id/information_button_next"
+        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="324dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/button_selector"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/Fonts"
         android:text="@string/information_button_text"
         android:textColor="#FFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

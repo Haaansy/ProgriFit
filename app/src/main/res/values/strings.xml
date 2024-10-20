@@ -24,9 +24,10 @@
         Home Screen
     -->
     <string name="homescreen_cardio_button_text">Cardio</string>
-    <string name="homescreen_home_workout_text">Home Workout</string>
+    <string name="homescreen_home_workout_text">Resistance Workout</string>
     <string name="homescreen_extensive_workout_button_text">Extensive Workout</string>
-    <string name="homescreen_greetings">Greetings,</string>
+    <string name="homescreen_greetings">Greetings, User!</string>
+    <string name="homescreen_subgreetings">What do you want to do today?</string>
 
     <!--
         Set Cardio Screen
