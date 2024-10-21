@@ -37,40 +37,6 @@ class MapsFragment : Fragment() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var mUserRoutesViewModel: UserRoutesViewModel
     private lateinit var sharedPref: SharedPreferences
-    private lateinit var destinationLocation: LatLng
-
-    private val callback = OnMapReadyCallback { googleMap ->
-        mMap = googleMap
-        mMap.uiSettings.isZoomControlsEnabled = true
-
-        var destinationMarker: Boolean = false
-
-        mMap.setOnMapClickListener(object :GoogleMap.OnMapClickListener {
-            override fun onMapClick(latlng :LatLng) {
-                setupMap()
-                // Animating to the touched position
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latlng));
-                destinationLocation = LatLng(latlng.latitude,latlng.longitude)
-
-                if(destinationMarker) {
-                    mMap.clear()
-                    val currentLatLong = LatLng(lastLocation.latitude, lastLocation.longitude)
-                    placeMarkerOnMap(currentLatLong)
-                    mMap.addMarker(
-                        MarkerOptions()
-                            .position(destinationLocation)
-                            .title("Destination"))
-                }//check Marker Count
-                else {
-                    mMap.addMarker(
-                        MarkerOptions()
-                            .position(destinationLocation)
-                            .title("Destination"))
-                    destinationMarker = true
-                }
-            }
-        })
-    }
 
     private fun setupMap() {
         if (ActivityCompat.checkSelfPermission(
@@ -81,24 +47,14 @@ class MapsFragment : Fragment() {
 
             return
         }
-        mMap.isMyLocationEnabled = true
         fusedLocationClient.lastLocation.addOnSuccessListener(requireActivity()){
             location ->
             if(location != null) {
                 lastLocation = location
                 val currentLatLong = LatLng(lastLocation.latitude, lastLocation.longitude)
-                placeMarkerOnMap(currentLatLong)
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLong, 12f))
             }
         }
     }
-
-    private fun placeMarkerOnMap(currentLatLong: LatLng) {
-        val markerOptions = MarkerOptions().position(currentLatLong)
-        markerOptions.title("${currentLatLong}")
-        mMap.addMarker(markerOptions)
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -111,7 +67,6 @@ class MapsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment?.getMapAsync(callback)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
@@ -128,7 +83,7 @@ class MapsFragment : Fragment() {
         permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
 
         view.findViewById<Button>(R.id.setcardio_confirm_route_button).setOnClickListener {
-            addToDatabase(sharedPref.getString("route_name", "").toString(), lastLocation.latitude, lastLocation.longitude, destinationLocation.latitude, destinationLocation.longitude)
+            addToDatabase(sharedPref.getString("route_name", "").toString(), lastLocation.latitude, lastLocation.longitude, 0.0, 0.0)
             view.findNavController().navigate(R.id.action_mapsFragment_to_listFragment)
         }
     }

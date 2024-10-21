@@ -19,7 +19,7 @@
             android:id="@+id/routeNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Main Route"
+            android:text=""
             android:textColor="#FFFFFF"
             android:textFontWeight="600"
             android:textSize="30sp"
