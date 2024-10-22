@@ -8,7 +8,7 @@
     android:theme="@style/Theme.Material3.Dark.NoActionBar">
 
 
-    <LinearLayout
+    <ScrollView
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,43 +24,50 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <!-- NAME INPUT -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyTextInputLayout"
                 android:id="@+id/name_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/information_label_name">
+                android:hint="@string/information_label_name"
+                android:textColorHint="@color/White">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- AGE INPUT -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyTextInputLayout"
                 android:id="@+id/age_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/information_label_age">
+                android:hint="@string/information_label_age"
+                android:textColorHint="@color/White">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- GENDER INPUT -->
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/MyDropDown"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                android:textColorHint="@color/White">
 
                 <AutoCompleteTextView
                     android:id="@+id/autocomplete_gender"
@@ -75,38 +82,45 @@
 
             <!-- HEIGHT INPUT -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyTextInputLayout"
                 android:id="@+id/height_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/information_label_height">
+                android:hint="@string/information_label_height"
+                android:textColorHint="@color/White">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- WEIGHT INPUT -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyTextInputLayout"
                 android:id="@+id/weight_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/information_label_weight">
+                android:hint="@string/information_label_weight"
+                android:textColorHint="@color/White">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal|number"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- ACTIVITY LEVEL INPUT -->
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/MyDropDown"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_margin="10dp"
+                android:textColorHint="@color/White">
 
                 <AutoCompleteTextView
                     android:id="@+id/autocomplete_activity_level"
@@ -120,7 +134,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -172,8 +186,9 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

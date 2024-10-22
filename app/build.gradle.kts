@@ -112,8 +112,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0-alpha02")
 
     // Map Box
-    implementation("com.mapbox.navigationcore:navigation:3.4.1")
-    implementation("com.mapbox.navigationcore:ui-maps:3.4.1")
+    implementation("com.mapbox.navigationcore:android:3.4.1")
     implementation("com.mapbox.navigationcore:ui-components:3.4.1")
 }
 

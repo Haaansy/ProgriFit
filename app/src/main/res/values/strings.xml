@@ -30,28 +30,17 @@
     <string name="homescreen_subgreetings">What do you want to do today?</string>
 
     <!--
-        Set Cardio Screen
+        Cardio Screen
     -->
-    <string name="setcardio_text">Cardio Routes</string>
-    <string name="setcardio_subtext">Select or Add a new route</string>
-    <string name="setcardio_add_button">Add</string>
-
+    <string name="cardio_text">Cardio</string>
+    <string name="cardio_subtext">Select or Add a new route</string>
+    <string name="cardio_add_button">Add</string>
     <!--
-        Set Cardio Screen [ FRAGMENT ADD ]
+        Add Route Screen
     -->
-    <string name="setcardio_fragment_text">Add your route</string>
-    <string name="setcardio_fragment_subtext">What would you like to call your route?</string>
-    <string name="setcardio_fragment_route_name_input">Route Name</string>
-    <string name="setcardio_fragment_edit_route_button">Map Route</string>
-    <string name="setcardio_fragment_confirm_button">Confirm</string>
-    <string name="setcardio_fragment_delete_button">Delete</string>
-
-
-    <!--
-        Set Cardio Screen [ FRAGMENT UPDATE ]
-    -->
-    <string name="setcardio_fragment_update_text">Jogging Routes Details</string>
-    <string name="setcardio_fragment_update_start_button">Start Route</string>
-    <string name="setcardio_fragment_update_button">Update Route</string>
+    <string name="add_cardio_text">Add your route</string>
+    <string name="add_cardio_subtext">What would you like to call your route?</string>
+    <string name="add_cardio_route_name_label">Route Name</string>
+    <string name="add_cardio_confirm_button">Confirm</string>
 
 </resources>

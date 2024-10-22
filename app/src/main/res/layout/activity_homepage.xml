@@ -12,25 +12,25 @@
         android:layout_height="75dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/progrifit_logo" />
 
     <View
         android:id="@+id/view"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="2dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="216dp"
         android:background="@color/Secondary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view2"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="2dp"
         android:layout_marginTop="72dp"
         android:background="@color/Secondary"
@@ -50,10 +50,10 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/subgreeting"

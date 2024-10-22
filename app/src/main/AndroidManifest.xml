@@ -52,13 +52,10 @@
             android:name=".screens.HomePage"
             android:exported="false"/>
         <activity
-            android:name=".screens.SetCardioTraining"
+            android:name=".screens.cardio.CardioTrainingPage"
             android:exported="false"/>
         <activity
-            android:name=".screens.HomeWorkout"
-            android:exported="false"/>
-        <activity
-            android:name=".screens.ExtensiveWorkout"
+            android:name=".screens.cardio.addCardioRoute"
             android:exported="false"/>
     </application>
 
