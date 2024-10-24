@@ -1,4 +1,4 @@
-package com.cc17.progrifit30.screens.extensiveworkout.StrengthTraining
+package com.cc17.progrifit30.screens.extensiveWorkout.Exercises
 
 class StrengthExercises {
     companion object {
@@ -6,7 +6,7 @@ class StrengthExercises {
             "Push-Ups" to mapOf(
                 "name" to "Push-Ups",
                 "duration" to 20,
-                "repetitions" to 15
+                "repetitions" to 15,
             ),
             "Pull-Ups" to mapOf(
                 "name" to "Pull-Ups",

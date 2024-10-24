@@ -66,10 +66,17 @@
     <!--
         Extensive Workout Page
     -->
-
     <string name="strength_workout_text">Extensive Workout</string>
     <string name="strength_workout_subtext">What do you want to work on today?</string>
     <string name="strength_upper_text">Upper Body</string>
     <string name="strength_lower_text">Lower Body</string>
     <string name="strength_core_text">Core</string>
+
+    <!--
+        Start Workout
+    -->
+    <string name="start_workout_Repetitions_text">Repetitions</string>
+    <string name="start_workout_Duration_text">Time</string>
+    <string name="start_workout_start_Button_text">Start Workout</string>
+    <string name="start_workout_Complete_button_text">Complete Workout</string>
 </resources>

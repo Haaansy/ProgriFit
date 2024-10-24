@@ -3,7 +3,6 @@ package com.cc17.progrifit30.screens.extensiveworkout
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
@@ -13,7 +12,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.cc17.progrifit30.R
-import com.cc17.progrifit30.screens.extensiveworkout.StrengthTraining.StrengthExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.BodyWeightExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.CardioExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.FlexibilityExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.FullBodyExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.PylometricExercises
+import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.StrengthExercises
 
 class SelectTraining: AppCompatActivity() {
 
@@ -47,6 +51,21 @@ class SelectTraining: AppCompatActivity() {
                 val exerciseList = StrengthExercises.getCoreExerciseNames()
                 createButtonList(exerciseList)
             }
+        } else if(workoutVal == "Cardio Exercises") {
+            val exerciseList = CardioExercises.getExercises()
+            createButtonList(exerciseList)
+        } else if(workoutVal == "Flexibility & Mobility") {
+            val exerciseList = FlexibilityExercises.getExercises()
+            createButtonList(exerciseList)
+        } else if(workoutVal == "Full-Body Workouts") {
+            val exerciseList = FullBodyExercises.getExercises()
+            createButtonList(exerciseList)
+        } else if(workoutVal == "Body Weight Exercises") {
+            val exerciseList = BodyWeightExercises.getExercises()
+            createButtonList(exerciseList)
+        } else if(workoutVal == "Pylometric") {
+            val exerciseList = PylometricExercises.getExercises()
+            createButtonList(exerciseList)
         }
     }
 
@@ -76,6 +95,7 @@ class SelectTraining: AppCompatActivity() {
             // Optionally: Set an onClickListener for each button
             button.setOnClickListener {
                 // Handle button click
+                finish()
                 workoutName.edit().putString("workout_name", button.text.toString()).apply()
                 val intent = Intent(this@SelectTraining, StartTraining::class.java)
                 startActivity(intent)

@@ -22,8 +22,6 @@ class ExtensiveWorkoutPage: AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("workout_type", Context.MODE_PRIVATE)
 
-
-
         val strengthButton = findViewById<Button>(R.id.ext_strength_button)
         strengthButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", strengthButton.text.toString()).apply()
@@ -36,31 +34,46 @@ class ExtensiveWorkoutPage: AppCompatActivity() {
         val cardioButton = findViewById<Button>(R.id.ext_cardio_button)
         cardioButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", cardioButton.text.toString()).apply()
-            Toast.makeText(this, strengthButton.text.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, cardioButton.text.toString(), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@ExtensiveWorkoutPage, SelectTraining::class.java)
+            startActivity(intent)
         }
 
         val flexButton = findViewById<Button>(R.id.ext_flex_button)
         flexButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", flexButton.text.toString()).apply()
-            Toast.makeText(this, strengthButton.text.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(this, flexButton.text.toString(), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@ExtensiveWorkoutPage, SelectTraining::class.java)
+            startActivity(intent)
         }
 
         val fullButton = findViewById<Button>(R.id.ext_full_button)
         fullButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", fullButton.text.toString()).apply()
             Toast.makeText(this, strengthButton.text.toString(), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@ExtensiveWorkoutPage, SelectTraining::class.java)
+            startActivity(intent)
         }
 
         val bodyButton = findViewById<Button>(R.id.ext_body_weight_button)
         bodyButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", bodyButton.text.toString()).apply()
             Toast.makeText(this, strengthButton.text.toString(), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@ExtensiveWorkoutPage, SelectTraining::class.java)
+            startActivity(intent)
         }
 
         val pyloButton = findViewById<Button>(R.id.ext_pylo_button)
         pyloButton.setOnClickListener {
             sharedPreferences.edit().putString("workout_type", pyloButton.text.toString()).apply()
             Toast.makeText(this, strengthButton.text.toString(), Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this@ExtensiveWorkoutPage, SelectTraining::class.java)
+            startActivity(intent)
         }
     }
 }

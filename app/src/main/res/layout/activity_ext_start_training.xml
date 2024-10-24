@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/BackgroundColor">
@@ -21,6 +22,20 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.022" />
 
+    <TextView
+        android:id="@+id/workout_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/extensive_workout_text"
+        android:textColor="@color/Fonts"
+        android:textFontWeight="800"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_location_text" />
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="91dp"
@@ -37,11 +52,12 @@
         android:id="@+id/view4"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:background="@color/Secondary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workout_location_text" />
+        app:layout_constraintTop_toBottomOf="@+id/workout_name_label" />
 
     <TextView
         android:id="@+id/workout_location_text"
@@ -56,5 +72,101 @@
         app:layout_constraintStart_toStartOf="@+id/workout_type_text"
         app:layout_constraintTop_toBottomOf="@+id/workout_type_text"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/repetitions_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="@string/start_workout_Repetitions_text"
+        android:textColor="@color/Fonts"
+        android:textFontWeight="800"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/repetitions_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:text="15"
+        android:textColor="@color/White"
+        android:textFontWeight="800"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/repetitions_text"
+        app:layout_constraintTop_toBottomOf="@+id/repetitions_text" />
+
+    <TextView
+        android:id="@+id/time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
+        android:text="15:00"
+        android:textColor="@color/White"
+        android:textFontWeight="800"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/time_text"
+        app:layout_constraintTop_toBottomOf="@+id/time_text" />
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="96dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="@string/start_workout_Duration_text"
+        android:textColor="@color/Fonts"
+        android:textFontWeight="800"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="409dp"
+        android:layout_height="273dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start_workout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/Secondary"
+        android:fontFamily="@font/roboto"
+        android:text="@string/start_workout_start_Button_text"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repetitions_label" />
+
+    <Button
+        android:id="@+id/start_workout_complete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/Secondary"
+        android:fontFamily="@font/roboto"
+        android:text="@string/start_workout_Complete_button_text"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_workout_button" />
+
 
 </android.support.constraint.ConstraintLayout>
