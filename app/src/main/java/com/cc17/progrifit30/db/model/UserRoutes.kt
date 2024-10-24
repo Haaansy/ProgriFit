@@ -11,8 +11,5 @@ data class UserRoutes (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
-    val currentLat: Double,
-    val currentLong: Double,
-    val destLat: Double,
-    val destLong: Double,
+    val points: String
 ): Parcelable

@@ -57,6 +57,21 @@
         <activity
             android:name=".screens.cardio.addCardioRoute"
             android:exported="false"/>
+        <activity
+            android:name=".screens.cardio.StartRun"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.extensiveworkout.ExtensiveWorkoutPage"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.extensiveworkout.StrengthTraining.StrengthTraining"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.extensiveworkout.SelectTraining"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.extensiveworkout.StartTraining"
+            android:exported="false"/>
     </application>
 
 </manifest>

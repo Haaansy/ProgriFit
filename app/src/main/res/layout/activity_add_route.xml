@@ -30,12 +30,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="448dp"
+        android:layout_height="257dp"
         android:background="@drawable/frame_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -79,7 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subgreeting"/>
+            app:layout_constraintTop_toBottomOf="@+id/subgreeting" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/route_name_input"
@@ -90,7 +90,6 @@
             android:layout_marginTop="48dp"
             android:hint="@string/add_cardio_route_name_label"
             android:textColorHint="@color/White"
-            app:layout_constraintBottom_toTopOf="@+id/add_route_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +103,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/add_route_button"
+            android:id="@+id/start_route_button"
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="324dp"
             android:layout_height="53dp"
@@ -116,7 +115,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/route_name_input" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -38,9 +38,38 @@
     <!--
         Add Route Screen
     -->
-    <string name="add_cardio_text">Add your route</string>
-    <string name="add_cardio_subtext">What would you like to call your route?</string>
-    <string name="add_cardio_route_name_label">Route Name</string>
+    <string name="add_cardio_text">Start a new run</string>
+    <string name="add_cardio_subtext">What would you like to call your run?</string>
+    <string name="add_cardio_route_name_label">Run Name</string>
     <string name="add_cardio_confirm_button">Confirm</string>
 
+    <!--
+        Start Route Screen
+    -->
+    <string name="time_elapsed_text">Time Elapsed</string>
+    <string name="distance_subtext">Distance Travelled</string>
+    <string name="calories_text">Calories Burned</string>
+    <string name="stop_button">Stop</string>
+
+    <!--
+        Extensive Workout Page
+    -->
+    <string name="extensive_workout_text">Extensive Workout</string>
+    <string name="extensive_workout_subtext">What do you want to work on today?</string>
+    <string name="strength_text">Strength Training</string>
+    <string name="cardio_exercise_text">Cardio Exercises</string>
+    <string name="flex_exercise_text">Flexibility &amp; Mobility</string>
+    <string name="full_exercise_text">Full-Body Workouts</string>
+    <string name="Bodyweight_exercise_text">Body Weight Exercises</string>
+    <string name="pylometric_exercise_text">Pylometric</string>
+
+    <!--
+        Extensive Workout Page
+    -->
+
+    <string name="strength_workout_text">Extensive Workout</string>
+    <string name="strength_workout_subtext">What do you want to work on today?</string>
+    <string name="strength_upper_text">Upper Body</string>
+    <string name="strength_lower_text">Lower Body</string>
+    <string name="strength_core_text">Core</string>
 </resources>

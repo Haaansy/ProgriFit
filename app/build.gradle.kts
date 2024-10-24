@@ -114,6 +114,10 @@ dependencies {
     // Map Box
     implementation("com.mapbox.navigationcore:android:3.4.1")
     implementation("com.mapbox.navigationcore:ui-components:3.4.1")
+
+    // Kotlin Serialization
+    implementation("com.squareup.moshi:moshi:1.9.3")
+    implementation("com.squareup.moshi:moshi-kotlin:1.9.3")
 }
 
 secrets {

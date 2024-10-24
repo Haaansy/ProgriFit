@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.cc17.progrifit30.R
 import com.cc17.progrifit30.db.userDB.UserViewModel
 import com.cc17.progrifit30.screens.cardio.CardioTrainingPage
+import com.cc17.progrifit30.screens.extensiveworkout.ExtensiveWorkoutPage
 
 class HomePage: AppCompatActivity() {
 
@@ -36,14 +37,14 @@ class HomePage: AppCompatActivity() {
 
         val resistanceButton = findViewById<Button>(R.id.homepage_resistance_button)
         resistanceButton.setOnClickListener {
-            /* val intent = Intent(this@HomePage, HomeWorkout::class.java)
+            /*val intent = Intent(this@HomePage, ExtensiveWorkoutPage::class.java)
             startActivity(intent) */
         }
 
         val extensiveWorkoutButton = findViewById<Button>(R.id.homepage_extensive_button)
         extensiveWorkoutButton.setOnClickListener {
-            /* val intent = Intent(this@HomePage, ExtensiveWorkout::class.java)
-            startActivity(intent) */
+            val intent = Intent(this@HomePage, ExtensiveWorkoutPage::class.java)
+            startActivity(intent)
         }
     }
 }

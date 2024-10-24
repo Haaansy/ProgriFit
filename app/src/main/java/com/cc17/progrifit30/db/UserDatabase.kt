@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.cc17.progrifit30.db.TypeConverter.Converters
 import com.cc17.progrifit30.db.model.User
 import com.cc17.progrifit30.db.userDB.UserDao
 import com.cc17.progrifit30.db.model.UserRoutes
@@ -14,6 +16,7 @@ import com.cc17.progrifit30.db.userDB.UserRoutesDao
     version = 1,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class UserDatabase: RoomDatabase() {
 
     abstract fun userdao(): UserDao
