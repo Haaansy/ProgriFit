@@ -64,7 +64,7 @@
     <string name="pylometric_exercise_text">Pylometric</string>
 
     <!--
-        Extensive Workout Page
+        Extensive Workout Page [ Location ]
     -->
     <string name="strength_workout_text">Extensive Workout</string>
     <string name="strength_workout_subtext">What do you want to work on today?</string>
@@ -79,4 +79,15 @@
     <string name="start_workout_Duration_text">Time</string>
     <string name="start_workout_start_Button_text">Start Workout</string>
     <string name="start_workout_Complete_button_text">Complete Workout</string>
+
+    <!--
+        Extensive Workout Page
+    -->
+    <string name="resistance_workout_text">Resistance Workout</string>
+    <string name="resistance_workout_subtext">What do you want to work on today?</string>
+    <string name="resistance_upper_body_text">Upper-Body</string>
+    <string name="resistance_lower_body_text">Lower-Body</string>
+    <string name="resistance_core_text">Core</string>
+    <string name="resistance_full_body_text">Full-Body</string>
+    <string name="resistance_Bodyweight_exercise_text">Body Weight Exercises</string>
 </resources>

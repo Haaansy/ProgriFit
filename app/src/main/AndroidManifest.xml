@@ -72,6 +72,18 @@
         <activity
             android:name=".screens.extensiveworkout.StartTraining"
             android:exported="false"/>
+        <activity
+            android:name=".screens.resistanceWorkout.ResistanceWorkoutPage"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.resistanceWorkout.SelectExercises"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.resistanceWorkout.SelectTraining"
+            android:exported="false"/>
+        <activity
+            android:name=".screens.resistanceWorkout.StartTraining"
+            android:exported="false"/>
     </application>
 
 </manifest>

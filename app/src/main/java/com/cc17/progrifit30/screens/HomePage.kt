@@ -12,6 +12,7 @@ import com.cc17.progrifit30.R
 import com.cc17.progrifit30.db.userDB.UserViewModel
 import com.cc17.progrifit30.screens.cardio.CardioTrainingPage
 import com.cc17.progrifit30.screens.extensiveworkout.ExtensiveWorkoutPage
+import com.cc17.progrifit30.screens.resistanceWorkout.ResistanceWorkoutPage
 
 class HomePage: AppCompatActivity() {
 
@@ -37,8 +38,8 @@ class HomePage: AppCompatActivity() {
 
         val resistanceButton = findViewById<Button>(R.id.homepage_resistance_button)
         resistanceButton.setOnClickListener {
-            /*val intent = Intent(this@HomePage, ExtensiveWorkoutPage::class.java)
-            startActivity(intent) */
+            val intent = Intent(this@HomePage, ResistanceWorkoutPage::class.java)
+            startActivity(intent)
         }
 
         val extensiveWorkoutButton = findViewById<Button>(R.id.homepage_extensive_button)
