@@ -1,6 +1,6 @@
 package com.cc17.progrifit30.screens.resistanceWorkout.Exercises
 
-import com.cc17.progrifit30.screens.extensiveWorkout.Exercises.FullBodyExercises
+import com.cc17.progrifit30.screens.resistanceWorkout.Exercises.FullBodyExercises
 
 class FullBodyExercises {
     companion object {
